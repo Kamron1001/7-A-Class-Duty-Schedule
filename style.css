@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: black;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+.highlight {
+    background-color: rgb(248, 248, 10);
+}
+th{
+    color: #f9f9f9;
+    background-color: #ccc;
+}
+tr {
+    border-radius: 5px;
+    background-color: #5eff00;
+    color: #fff;
+}
+/* Стили для мобильных устройств */
+@media (max-width: 600px) {
+    table {
+        display: block;
+        width: 100%;
+    }
+    thead {
+        display: none;
+    }
+    tbody {
+        display: block;
+        width: 100%;
+    }
+    tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #5eff00;
+        color: #fff;
+    }
+    td {
+        display: block;
+        text-align: left;
+        padding: 10px;
+        border: none;
+    }
+    td::before {
+        content: "";
+        display: none; 
+    }
+}
