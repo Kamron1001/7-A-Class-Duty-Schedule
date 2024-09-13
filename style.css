@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: black; /* Темный фон страницы */
+    color: #fff; /* Белый текст на темном фоне */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.highlight {
+    background-color: rgb(248, 248, 10); /* Подсветка текущих дежурных */
+}
+
+th {
+    color: #000; /* Чёрный текст в заголовках */
+    background-color: #ccc; /* Светло-серый фон заголовков */
+}
+
+tr {
+    border-radius: 5px;
+    background-color: #5eff00; /* Светло-зеленый фон строк */
+    color: #000; /* Чёрный текст для лучшей читаемости */
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 600px) {
+    table {
+        display: block;
+        width: 100%;
+    }
+    thead {
+        display: none;
+    }
+    tbody {
+        display: block;
+        width: 100%;
+    }
+    tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ccc; /* Светло-серые границы строк */
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #5eff00; /* Светло-зеленый фон строк */
+        color: #000; /* Чёрный текст для лучшей читаемости */
+    }
+    td {
+        display: block;
+        text-align: left;
+        padding: 10px;
+        border: none;
+    }
+    td::before {
+        content: "";
+        display: none; /* Убираем метку */
+    }
+}
