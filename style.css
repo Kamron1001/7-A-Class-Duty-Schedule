@@ -1,0 +1,91 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background: linear-gradient(135deg, #1f1f1f, #333);
+    color: #e0e0e0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #2b2b2b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #3e3e3e;
+    text-align: center;
+}
+
+th {
+    color: #fff;
+    background-color: #444;
+    border-bottom: 2px solid #d4ff88;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tr {
+    background-color: #323232;
+    color: #fff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Плавный переход между желтым и лаймовым для строки текущих дежурных */
+.highlight {
+    background: linear-gradient(90deg, #ffda44, #d4ff88); /* Плавный переход жёлтый -> лаймовый */
+    color: #000;
+    box-shadow: 0 0 15px rgba(212, 255, 136, 0.5); /* Лёгкое свечение */
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Плавный переход */
+}
+
+/* Мобильные стили */
+@media (max-width: 600px) {
+    table {
+        display: block;
+        width: 100%;
+    }
+    thead {
+        display: none;
+    }
+    tbody {
+        display: block;
+        width: 100%;
+    }
+    tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #3e3e3e;
+        border-radius: 10px;
+        background-color: #2b2b2b;
+        overflow: hidden;
+        color: #e0e0e0;
+    }
+    td {
+        display: block;
+        padding: 10px;
+        text-align: left;
+        font-size: 14px;
+        border-bottom: 1px solid #3e3e3e;
+        position: relative;
+    }
+    td:last-child {
+        border-bottom: none;
+    }
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #ffda44;
+    }
+
+    /* Стиль для текущих дежурных на мобильных */
+    .highlight {
+        background: linear-gradient(90deg, #ffda44, #d4ff88);
+        border-left: 5px solid #d4ff88;
+        box-shadow: 0 0 10px rgba(212, 255, 136, 0.5);
+    }
+}
