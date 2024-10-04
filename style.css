@@ -1,0 +1,148 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background: linear-gradient(135deg, #1f1f1f, #333);
+    color: #e0e0e0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #2b2b2b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #3e3e3e;
+    text-align: center;
+}
+
+th {
+    color: #fff;
+    background-color: #444;
+    border-bottom: 2px solid #d4ff88;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tr {
+    background-color: #323232;
+    color: #fff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Плавный переход между желтым и лаймовым для строки текущих дежурных */
+.highlight {
+    background: linear-gradient(90deg, #ffda44, #d4ff88); /* Плавный переход жёлтый -> лаймовый */
+    color: #000;
+    box-shadow: 0 0 8px rgba(212, 255, 136, 0.5); /* Уменьшенное свечение */
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Плавный переход */
+}
+
+/* Стиль для кнопки */
+button {
+    background-color: #ffda44; /* Цвет кнопки */
+    color: #000; /* Цвет текста */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d4ff88; /* Цвет при наведении */
+}
+
+/* Мобильные стили */
+@media (max-width: 600px) {
+    table {
+        display: block;
+        width: 100%;
+    }
+    thead {
+        display: none;
+    }
+    tbody {
+        display: block;
+        width: 100%;
+    }
+    tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #3e3e3e;
+        border-radius: 10px;
+        background-color: #2b2b2b;
+        overflow: hidden;
+        color: #e0e0e0;
+    }
+    td {
+        display: block;
+        padding: 10px;
+        text-align: left;
+        font-size: 14px;
+        border-bottom: 1px solid #3e3e3e;
+        position: relative;
+    }
+    td:last-child {
+        border-bottom: none;
+    }
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #ffda44;
+    }
+
+    /* Стиль для текущих дежурных на мобильных */
+    .highlight {
+        background: linear-gradient(90deg, #ffda44, #d4ff88);
+        border-left: 5px solid #d4ff88;
+        box-shadow: 0 0 10px rgba(212, 255, 136, 0.5);
+    }
+}
+.stopped {
+    background-color: red; /* Красный цвет при остановке */
+}
+button {
+    background: linear-gradient(135deg, #ffda44, #d4ff88); /* Градиент по умолчанию */
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+button:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для кнопки, когда движение остановлено */
+button.stopped {
+    background: linear-gradient(135deg, #ff6f61, #ff3b3b); /* Красный градиент для остановленного состояния */
+    color: #fff; /* Белый текст для контраста */
+}
+
+button.stopped:hover {
+    box-shadow: 0 12px 20px rgba(255, 99, 71, 0.3); /* Красная тень при наведении */
+    transform: scale(1.05);
+}
+
+
+
